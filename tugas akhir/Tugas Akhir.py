@@ -50,7 +50,14 @@ class SampleApp(tk.Tk):
 
         if page_name in page_geometries:
             self.geometry(page_geometries[page_name])
-
+            
+        if page_name in page_geometries:
+                self.geometry(page_geometries[page_name])
+            if page_name == "SavedRecipesPage":
+                self.resizable(True,True)
+            else:
+                self.resizable(False,False)
+    
     def on_closing(self):
         if messagebox.askyesno(title='Quit?', message='Are you sure you want to quit?'):
             self.destroy()
